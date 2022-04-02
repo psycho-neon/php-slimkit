@@ -1,18 +1,41 @@
 {
+    "name": "psycho-neon/php-slim4",
+    "description": "PHP Slim 4 Skeleton",
+    "type": "project",
     "require": {
+        "cakephp/chronos": "^2.3",
+        "cakephp/validation": "^4.3",
         "cycle/database": "^1.0",
-        "laminas/laminas-diactoros": "^2.6",
+        "httpsoft/http-message": "^1.0",
+        "httpsoft/http-server-request": "^1.0",
+        "laminas/laminas-config": "^3.7",
+        "lcobucci/jwt": "^4.0",
         "php-di/php-di": "^6.3",
-        "slim/psr7": "^1.4",
-        "slim/slim": "4.*",
-        "laminas/laminas-config": "^3.7"
+        "selective/array-reader": "^1.1",
+        "slim/slim": "^4.10"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.6"
+        "squizlabs/php_codesniffer": "^3.6",
+        "friendsofphp/php-cs-fixer": "^3.8"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/app/"
+            "App\\": "src/"
         }
+    },
+    "authors": [
+        {
+            "name": "psycho-neon",
+            "email": "psycho-neon@xkromui.com"
+        }
+    ],
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "scripts": {
+        "cs:check": "php-cs-fixer fix --dry-run --format=txt --verbose --diff --config=.cs.php --ansi",
+        "cs:fix": "php-cs-fixer fix --config=.cs.php --ansi",
+        "dev": "php -S 0.0.0.0:8888 -t public"
     }
 }
