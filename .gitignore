@@ -32,4 +32,4 @@ composer.lock
 *.db-wal
 
 /build/*
-!/build/empty
+!/build/*.md
